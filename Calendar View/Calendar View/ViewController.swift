@@ -10,16 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var btnShowCalendar: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        btnShowCalendar.layer.cornerRadius  = 22
+        btnShowCalendar.layer.masksToBounds = true
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func showCalendarAction(_ sender: Any) {
+        performSegue(withIdentifier: "ShowCalendarSegue", sender: self)
     }
-
-
+    
 }
 
