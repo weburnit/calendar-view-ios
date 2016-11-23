@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Menu View Delegate-->
+        <!--Calendar Appearance Delegate-->
         <scene sceneID="9H4-m9-sGg">
             <objects>
                 <viewController id="xKK-dF-F38" customClass="CalendarViewController" customModule="CalendarView" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,9 +72,13 @@
                                             <outlet property="menuViewDelegate" destination="xKK-dF-F38" id="ZOO-a4-PyI"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPq-YV-d4j">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPq-YV-d4j" customClass="CVCalendarView" customModule="CVCalendar">
                                         <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="calendarAppearanceDelegate" destination="xKK-dF-F38" id="Qyv-1D-rba"/>
+                                            <outlet property="calendarDelegate" destination="xKK-dF-F38" id="ZEd-sL-A3V"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,6 +107,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="calendarMenu" destination="CeH-6A-RZZ" id="gNs-s2-tUe"/>
+                        <outlet property="calendarView" destination="xPq-YV-d4j" id="JZC-59-tIj"/>
                         <outlet property="topView" destination="v75-P5-osb" id="d2T-fz-4j7"/>
                     </connections>
                 </viewController>

@@ -10,9 +10,11 @@ import UIKit
 import CVCalendar
 
 class CalendarViewController: UIViewController {
-    @IBOutlet weak var topView: UIView!
-
-    @IBOutlet weak var calendarMenu: CVCalendarMenuView!
+    
+    @IBOutlet weak var topView:         UIView!
+    @IBOutlet weak var calendarMenu:    CVCalendarMenuView!
+    @IBOutlet weak var calendarView:    CVCalendarView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavigationBar()
@@ -33,20 +35,49 @@ class CalendarViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         calendarMenu.commitMenuViewUpdate()
+        calendarView.commitCalendarViewUpdate()
     }
 }
 
-extension CalendarViewController: CVCalendarMenuViewDelegate{
+extension CalendarViewController: CVCalendarMenuViewDelegate {
     
     func firstWeekday() -> Weekday {
         return .monday
     }
     
-    func dayOfWeekTextColor() -> UIColor {
+    func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
         return UIColorFromRGB(rgbValue: 0xFFFFFF, alpha: 0.7)
     }
     
     func dayOfWeekFont() -> UIFont {
-        return UIFont.init(name: "HelveticaNeue-Bold", size: 10)!
+        return UIFont.init(name: "HelveticaNeue-Bold", size: 12)!
     }
+}
+
+extension CalendarViewController: CVCalendarViewDelegate {
+    
+    func presentationMode() -> CalendarMode {
+        return .weekView
+    }
+
+    func shouldShowWeekdaysOut() -> Bool {
+        return true
+    }
+    
+}
+
+extension CalendarViewController: CVCalendarViewAppearanceDelegate {
+    
+    func dayLabelWeekdayInTextColor() -> UIColor {
+        return UIColorFromRGB(rgbValue: 0xFFFFFF, alpha: 0.7)
+    }
+    
+    func dayLabelWeekdayOutTextColor() -> UIColor {
+        return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.1)
+    }
+    
+    func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
+        return UIFont.init(name: "HelveticaNeue-Bold", size: 14)!
+    }
+    
 }
