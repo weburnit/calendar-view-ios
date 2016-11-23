@@ -14,6 +14,8 @@
 		5072073A1DE0AEF40064AEF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507207381DE0AEF40064AEF6 /* LaunchScreen.storyboard */; };
 		507207431DE0AFDC0064AEF6 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507207421DE0AFDC0064AEF6 /* CalendarViewController.swift */; };
 		507207451DE0B05D0064AEF6 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507207441DE0B05D0064AEF6 /* Calendar.storyboard */; };
+		5094B16E1DE5839600790401 /* CalendarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094B16D1DE5839600790401 /* CalendarUtils.swift */; };
+		5094B1711DE5981300790401 /* ic_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 5094B1701DE5981300790401 /* ic_back.png */; };
 		B9F808DD45EC57D4CBC8642C /* Pods_CalendarView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDB1AC93322B59C6E99D526F /* Pods_CalendarView.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		5072073B1DE0AEF40064AEF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507207421DE0AFDC0064AEF6 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = Calendar/CalendarViewController.swift; sourceTree = "<group>"; };
 		507207441DE0B05D0064AEF6 /* Calendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Calendar.storyboard; path = Calendar/Calendar.storyboard; sourceTree = "<group>"; };
+		5094B16D1DE5839600790401 /* CalendarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarUtils.swift; path = Calendar/CalendarUtils.swift; sourceTree = "<group>"; };
+		5094B1701DE5981300790401 /* ic_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_back.png; path = Calendar/Images/ic_back.png; sourceTree = "<group>"; };
 		984A0285B3A799AEEABDDCB4 /* Pods-CalendarView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CalendarView/Pods-CalendarView.debug.xcconfig"; sourceTree = "<group>"; };
 		C7B08B56DAA36A62FB8B89FF /* Pods-CalendarView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarView.release.xcconfig"; path = "Pods/Target Support Files/Pods-CalendarView/Pods-CalendarView.release.xcconfig"; sourceTree = "<group>"; };
 		CDB1AC93322B59C6E99D526F /* Pods_CalendarView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CalendarView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,10 +83,20 @@
 		507207411DE0AF9B0064AEF6 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				5094B16F1DE597FC00790401 /* Images */,
+				5094B16D1DE5839600790401 /* CalendarUtils.swift */,
 				507207421DE0AFDC0064AEF6 /* CalendarViewController.swift */,
 				507207441DE0B05D0064AEF6 /* Calendar.storyboard */,
 			);
 			name = Calendar;
+			sourceTree = "<group>";
+		};
+		5094B16F1DE597FC00790401 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				5094B1701DE5981300790401 /* ic_back.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		93E2D2B1A95435F5210F1CEF /* Pods */ = {
@@ -165,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5094B1711DE5981300790401 /* ic_back.png in Resources */,
 				507207451DE0B05D0064AEF6 /* Calendar.storyboard in Resources */,
 				5072073A1DE0AEF40064AEF6 /* LaunchScreen.storyboard in Resources */,
 				507207371DE0AEF40064AEF6 /* Assets.xcassets in Resources */,
@@ -228,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				507207431DE0AFDC0064AEF6 /* CalendarViewController.swift in Sources */,
+				5094B16E1DE5839600790401 /* CalendarUtils.swift in Sources */,
 				507207321DE0AEF40064AEF6 /* ViewController.swift in Sources */,
 				507207301DE0AEF40064AEF6 /* AppDelegate.swift in Sources */,
 			);
@@ -273,6 +289,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -295,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -323,6 +340,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -339,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
