@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v75-P5-osb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drc-cE-vvv">
                                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -75,6 +75,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPq-YV-d4j" customClass="CVCalendarView" customModule="CVCalendar">
                                         <rect key="frame" x="0.0" y="84" width="375" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="sxW-va-i4W"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="calendarAppearanceDelegate" destination="xKK-dF-F38" id="Qyv-1D-rba"/>
                                             <outlet property="calendarDelegate" destination="xKK-dF-F38" id="ZEd-sL-A3V"/>
@@ -84,14 +87,13 @@
                                 <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="xPq-YV-d4j" secondAttribute="trailing" id="1zq-Lz-YYd"/>
-                                    <constraint firstAttribute="height" constant="128" id="6ww-ka-VSx"/>
+                                    <constraint firstAttribute="height" constant="148" id="6ww-ka-VSx"/>
                                     <constraint firstItem="xPq-YV-d4j" firstAttribute="top" secondItem="CeH-6A-RZZ" secondAttribute="bottom" id="KMr-4J-BpP"/>
                                     <constraint firstItem="CeH-6A-RZZ" firstAttribute="leading" secondItem="v75-P5-osb" secondAttribute="leading" id="UE6-yj-D1D"/>
                                     <constraint firstItem="drc-cE-vvv" firstAttribute="leading" secondItem="v75-P5-osb" secondAttribute="leading" id="XEs-UR-ijo"/>
                                     <constraint firstItem="xPq-YV-d4j" firstAttribute="leading" secondItem="v75-P5-osb" secondAttribute="leading" id="ZE8-yb-Dbb"/>
                                     <constraint firstItem="drc-cE-vvv" firstAttribute="top" secondItem="v75-P5-osb" secondAttribute="top" constant="20" id="e96-Uz-oia"/>
                                     <constraint firstAttribute="trailing" secondItem="CeH-6A-RZZ" secondAttribute="trailing" id="fZn-ZI-VGm"/>
-                                    <constraint firstAttribute="bottom" secondItem="xPq-YV-d4j" secondAttribute="bottom" id="n0f-E7-f1H"/>
                                     <constraint firstAttribute="trailing" secondItem="drc-cE-vvv" secondAttribute="trailing" id="pXC-y8-0lh"/>
                                     <constraint firstItem="CeH-6A-RZZ" firstAttribute="top" secondItem="drc-cE-vvv" secondAttribute="bottom" id="t2B-1b-Sa5"/>
                                 </constraints>
