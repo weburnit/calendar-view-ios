@@ -65,7 +65,7 @@ extension CalendarViewController: CVCalendarViewDelegate {
     }
     
     func shouldAutoSelectDayOnWeekChange() -> Bool {
-        return false
+        return true
     }
     
     func selectionViewPath() -> ((CGRect) -> (UIBezierPath)) {
@@ -76,15 +76,21 @@ extension CalendarViewController: CVCalendarViewDelegate {
         return true
     }
     
+    func shouldSelectDayView(_ dayView: DayView) -> Bool {
+        return true
+    }
+    
 }
 
 extension CalendarViewController: CVCalendarViewAppearanceDelegate {
     
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
         switch (weekDay, status, present) {
-        case (_, .selected, _), (_, .highlighted, _): return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.7)
-        case (_, .out, _):      return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.1)
-        default:                return UIColorFromRGB(rgbValue: 0xFFFFFF, alpha: 0.7)
+        case (_, .selected, .present),  (_, .highlighted, .present):    return UIColorFromRGB(rgbValue: 0x0072BB)
+        case (_, .selected, _),         (_, .highlighted, _):           return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.7)
+        case (_, _, .present):                                          return UIColorFromRGB(rgbValue: 0x0072BB)
+        case (_, .out, _):                                              return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.1)
+        default:                                                        return UIColorFromRGB(rgbValue: 0xFFFFFF, alpha: 0.7)
         }
     }
     
@@ -94,8 +100,8 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
     
     func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
         switch (weekDay, status, present) {
-            case (_, .selected, _), (_, .highlighted, _): return UIColor.white
-            default:                return nil
+            case (_, .selected, _), (_, .highlighted, _):   return UIColor.white
+            default:                                        return nil
         }
     }
 }
