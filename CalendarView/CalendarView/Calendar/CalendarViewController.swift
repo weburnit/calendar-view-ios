@@ -14,11 +14,14 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var topView:         UIView!
     @IBOutlet weak var calendarMenu:    CVCalendarMenuView!
     @IBOutlet weak var calendarView:    CVCalendarView!
+    @IBOutlet weak var lbCurrentDate:   UILabel!
+    var selectedDay:                    CVCalendarDayView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         transparentNavigationBar()
         addGradientLayer(view: topView, colors: [UIColorFromRGB(rgbValue: 0x9754C8).cgColor, UIColorFromRGB(rgbValue: 0x42B6B4).cgColor])
+        lbCurrentDate.text = dateToStringWith(date: calendarView.manager.currentDate, dateFormatStr: "yyyy - MMM")
     }
     
     func transparentNavigationBar(){
@@ -36,6 +39,10 @@ class CalendarViewController: UIViewController {
         super.viewDidLayoutSubviews()
         calendarMenu.commitMenuViewUpdate()
         calendarView.commitCalendarViewUpdate()
+    }
+    
+    @IBAction func tapCurrentDateTitle(_ sender: Any) {
+        
     }
 }
 
@@ -64,10 +71,6 @@ extension CalendarViewController: CVCalendarViewDelegate {
         return true
     }
     
-    func shouldAutoSelectDayOnWeekChange() -> Bool {
-        return true
-    }
-    
     func selectionViewPath() -> ((CGRect) -> (UIBezierPath)) {
         return {UIBezierPath.init(roundedRect: CGRect(x: 12, y: 9, width: $0.width - 24, height: $0.height - 18), cornerRadius: 5)}
     }
@@ -78,6 +81,11 @@ extension CalendarViewController: CVCalendarViewDelegate {
     
     func shouldSelectDayView(_ dayView: DayView) -> Bool {
         return true
+    }
+    
+    func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
+        selectedDay = dayView
+        lbCurrentDate.text = dateToStringWith(date: (selectedDay?.date.convertedDate())!, dateFormatStr: "yyyy - MMM")
     }
     
 }

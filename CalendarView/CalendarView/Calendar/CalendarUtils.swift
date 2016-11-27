@@ -25,3 +25,9 @@ func addGradientLayer(view: UIView, colors: [CGColor]){
     gradient.endPoint               = CGPoint.init(x: 1, y: 0.5)
     view.layer.insertSublayer(gradient, at: 0)
 }
+
+func dateToStringWith(date: Date, dateFormatStr: String) -> String{
+    let dateformatter           = DateFormatter()
+    dateformatter.dateFormat    = dateFormatStr
+    return dateformatter.string(from: date)
+}
