@@ -64,20 +64,38 @@ extension CalendarViewController: CVCalendarViewDelegate {
         return true
     }
     
+    func shouldAutoSelectDayOnWeekChange() -> Bool {
+        return false
+    }
+    
+    func selectionViewPath() -> ((CGRect) -> (UIBezierPath)) {
+        return {UIBezierPath.init(roundedRect: CGRect(x: 12, y: 9, width: $0.width - 24, height: $0.height - 18), cornerRadius: 5)}
+    }
+    
+    func shouldShowCustomSingleSelection() -> Bool {
+        return true
+    }
+    
 }
 
 extension CalendarViewController: CVCalendarViewAppearanceDelegate {
     
-    func dayLabelWeekdayInTextColor() -> UIColor {
-        return UIColorFromRGB(rgbValue: 0xFFFFFF, alpha: 0.7)
-    }
-    
-    func dayLabelWeekdayOutTextColor() -> UIColor {
-        return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.1)
+    func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
+        switch (weekDay, status, present) {
+        case (_, .selected, _), (_, .highlighted, _): return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.7)
+        case (_, .out, _):      return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.1)
+        default:                return UIColorFromRGB(rgbValue: 0xFFFFFF, alpha: 0.7)
+        }
     }
     
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
         return UIFont.init(name: "HelveticaNeue-Bold", size: 14)!
     }
     
+    func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
+        switch (weekDay, status, present) {
+            case (_, .selected, _), (_, .highlighted, _): return UIColor.white
+            default:                return nil
+        }
+    }
 }
