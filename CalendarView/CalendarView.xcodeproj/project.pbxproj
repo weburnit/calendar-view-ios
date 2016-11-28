@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506B16031DECEED80063388E /* CalendarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B16021DECEED80063388E /* CalendarConstants.swift */; };
 		507207301DE0AEF40064AEF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072072F1DE0AEF40064AEF6 /* AppDelegate.swift */; };
 		507207321DE0AEF40064AEF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507207311DE0AEF40064AEF6 /* ViewController.swift */; };
 		507207351DE0AEF40064AEF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 507207331DE0AEF40064AEF6 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		506B16021DECEED80063388E /* CalendarConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarConstants.swift; path = Calendar/CalendarConstants.swift; sourceTree = "<group>"; };
 		5072072C1DE0AEF40064AEF6 /* CalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5072072F1DE0AEF40064AEF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		507207311DE0AEF40064AEF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				5094B1781DEB361300790401 /* ArrowView */,
 				5094B16F1DE597FC00790401 /* Images */,
 				5094B16D1DE5839600790401 /* CalendarUtils.swift */,
+				506B16021DECEED80063388E /* CalendarConstants.swift */,
 				507207421DE0AFDC0064AEF6 /* CalendarViewController.swift */,
 				507207441DE0B05D0064AEF6 /* Calendar.storyboard */,
 			);
@@ -266,6 +269,7 @@
 				5094B17A1DEB363500790401 /* ArrowView.swift in Sources */,
 				507207321DE0AEF40064AEF6 /* ViewController.swift in Sources */,
 				507207301DE0AEF40064AEF6 /* AppDelegate.swift in Sources */,
+				506B16031DECEED80063388E /* CalendarConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

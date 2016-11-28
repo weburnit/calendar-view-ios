@@ -17,6 +17,17 @@ func UIColorFromRGB(rgbValue: UInt, alpha: CGFloat = 1.0) -> UIColor {
     )
 }
 
+func transparentNavigationBar(naviController: UINavigationController?){
+    if (naviController != nil) {
+        naviController?.navigationBar.titleTextAttributes     = [NSForegroundColorAttributeName: UIColor.clear]
+        naviController?.navigationBar.tintColor               = UIColor.clear
+        naviController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        naviController?.navigationBar.shadowImage             = UIImage()
+        naviController?.navigationBar.isTranslucent           = true
+        naviController?.view.backgroundColor                  = UIColor.clear
+    }
+}
+
 func addGradientLayer(view: UIView, colors: [CGColor], frame: CGRect = CGRect.zero){
     let gradient: CAGradientLayer   = CAGradientLayer()
     gradient.frame                  = frame == CGRect.zero ? view.bounds : frame

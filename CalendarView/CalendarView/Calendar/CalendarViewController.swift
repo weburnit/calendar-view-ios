@@ -29,25 +29,14 @@ class CalendarViewController: UIViewController {
     }
     
     func setupViews(){
-        transparentNavigationBar()
+        transparentNavigationBar(naviController: navigationController)
         var frameGradientLayer          = topView.bounds
         var frameCalendarView           = calendarView.bounds
         frameGradientLayer.size.width   = UIScreen.main.bounds.width
         frameCalendarView.size.width    = UIScreen.main.bounds.width
         calendarView.frame              = frameCalendarView
-        addGradientLayer(view: topView, colors: [UIColorFromRGB(rgbValue: 0x9754C8).cgColor, UIColorFromRGB(rgbValue: 0x42B6B4).cgColor], frame: frameGradientLayer)
-        lbCurrentDate.text = dateToStringWith(date: calendarView.manager.currentDate, dateFormatStr: "yyyy - MMM")
-    }
-    
-    func transparentNavigationBar(){
-        if (navigationController != nil) {
-            navigationController?.navigationBar.titleTextAttributes     = [NSForegroundColorAttributeName: UIColor.clear]
-            navigationController?.navigationBar.tintColor               = UIColor.clear
-            navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-            navigationController?.navigationBar.shadowImage             = UIImage()
-            navigationController?.navigationBar.isTranslucent           = true
-            navigationController?.view.backgroundColor                  = UIColor.clear
-        }
+        addGradientLayer(view: topView, colors: [UIColorFromRGB(rgbValue: CalendarConstants.Colors.left).cgColor, UIColorFromRGB(rgbValue: CalendarConstants.Colors.right).cgColor], frame: frameGradientLayer)
+        lbCurrentDate.text              = dateToStringWith(date: calendarView.manager.currentDate, dateFormatStr: CalendarConstants.Formats.date_top)
     }
     
     override func viewDidLayoutSubviews() {
@@ -68,11 +57,11 @@ extension CalendarViewController: CVCalendarMenuViewDelegate {
     }
     
     func dayOfWeekTextColor(by weekday: Weekday) -> UIColor {
-        return UIColorFromRGB(rgbValue: 0xFFFFFF, alpha: 0.7)
+        return UIColorFromRGB(rgbValue: CalendarConstants.Colors.white, alpha: 0.7)
     }
     
     func dayOfWeekFont() -> UIFont {
-        return UIFont.init(name: "HelveticaNeue-Bold", size: 12)!
+        return UIFont.init(name: CalendarConstants.Fonts.helvetica_neue_bold, size: 12)!
     }
 }
 
@@ -100,7 +89,7 @@ extension CalendarViewController: CVCalendarViewDelegate {
     
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
         selectedDay = dayView.date.convertedDate()!
-        lbCurrentDate.text = dateToStringWith(date: selectedDay, dateFormatStr: "yyyy - MMM")
+        lbCurrentDate.text = dateToStringWith(date: selectedDay, dateFormatStr: CalendarConstants.Formats.date_top)
         arrowView.reload()
         
     }
@@ -111,16 +100,16 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
     
     func dayLabelColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {
         switch (weekDay, status, present) {
-        case (_, .selected, .present),  (_, .highlighted, .present):    return UIColorFromRGB(rgbValue: 0x0072BB)
-        case (_, .selected, _),         (_, .highlighted, _):           return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.7)
-        case (_, _, .present):                                          return UIColorFromRGB(rgbValue: 0x0072BB)
-        case (_, .out, _):                                              return UIColorFromRGB(rgbValue: 0x000000, alpha: 0.1)
-        default:                                                        return UIColorFromRGB(rgbValue: 0xFFFFFF, alpha: 0.7)
+        case (_, .selected, .present),  (_, .highlighted, .present):    return UIColorFromRGB(rgbValue: CalendarConstants.Colors.present)
+        case (_, .selected, _),         (_, .highlighted, _):           return UIColorFromRGB(rgbValue: CalendarConstants.Colors.black, alpha: 0.7)
+        case (_, _, .present):                                          return UIColorFromRGB(rgbValue: CalendarConstants.Colors.present)
+        case (_, .out, _):                                              return UIColorFromRGB(rgbValue: CalendarConstants.Colors.black, alpha: 0.1)
+        default:                                                        return UIColorFromRGB(rgbValue: CalendarConstants.Colors.white, alpha: 0.7)
         }
     }
     
     func dayLabelFont(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIFont {
-        return UIFont.init(name: "HelveticaNeue-Bold", size: 14)!
+        return UIFont.init(name: CalendarConstants.Fonts.helvetica_neue_bold, size: 14)!
     }
     
     func dayLabelBackgroundColor(by weekDay: Weekday, status: CVStatus, present: CVPresent) -> UIColor? {

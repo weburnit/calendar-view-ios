@@ -42,7 +42,7 @@ class ArrowView: UIView {
         imgArrow.translatesAutoresizingMaskIntoConstraints  = false
         arrowView.backgroundColor                           = UIColor.clear
         imgArrow.backgroundColor                            = UIColor.clear
-        imgArrow.image                                      = UIImage(named: "ic_arrow_up.png")
+        imgArrow.image                                      = UIImage(named: CalendarConstants.Images.arrow_up)
         imgArrow.contentMode                                = .scaleAspectFit
         imgArrow.isHidden                                   = true
         arrowView.addSubview(imgArrow)
