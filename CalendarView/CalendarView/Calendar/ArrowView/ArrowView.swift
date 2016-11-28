@@ -39,7 +39,13 @@ class ArrowView: UIView {
     
     private func initCommon() {
         arrowView.translatesAutoresizingMaskIntoConstraints = false
-        arrowView.backgroundColor = UIColor.blue
+        imgArrow.translatesAutoresizingMaskIntoConstraints  = false
+        arrowView.backgroundColor                           = UIColor.clear
+        imgArrow.backgroundColor                            = UIColor.clear
+        imgArrow.image                                      = UIImage(named: "ic_arrow_up.png")
+        imgArrow.contentMode                                = .scaleAspectFit
+        imgArrow.isHidden                                   = true
+        arrowView.addSubview(imgArrow)
         addSubview(arrowView)
     }
     
@@ -50,12 +56,17 @@ class ArrowView: UIView {
     private func addConstraintForView(){
         NSLayoutConstraint.deactivate(allConstraints)
         allConstraints.removeAll()
-        let width = Int(bounds.width)/(delegate?.numbersArrows())!
-        let views = ["arrowView":arrowView, "imgArrow":imgArrow]
-        let spaceLeftConstraints   = NSLayoutConstraint.constraints(withVisualFormat: "H:|-\((delegate?.currentArrowIndex())!*width)-[arrowView(\(width))]", options: [], metrics: nil, views: views)
-        let verticalConstraints   = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[arrowView]-0-|", options: [], metrics: nil, views: views)
-        allConstraints += spaceLeftConstraints
-        allConstraints += verticalConstraints
+        imgArrow.isHidden           = false
+        let width                   = Int(bounds.width)/(delegate?.numbersArrows())!
+        let views                   = ["arrowView":arrowView, "imgArrow":imgArrow]
+        let spaceLeftConstraints    = NSLayoutConstraint.constraints(withVisualFormat: "H:|-\((delegate?.currentArrowIndex())!*width)-[arrowView(\(width))]", options: [], metrics: nil, views: views)
+        let verticalConstraints     = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[arrowView]-0-|", options: [], metrics: nil, views: views)
+        let heightImageConstraints  = NSLayoutConstraint.constraints(withVisualFormat: "V:[imgArrow(10)]-0-|", options: [], metrics: nil, views: views)
+        let widthImageConstraints   = NSLayoutConstraint.constraints(withVisualFormat: "H:|[imgArrow(20)]|", options: [], metrics: nil, views: views)
+        allConstraints              += spaceLeftConstraints
+        allConstraints              += verticalConstraints
+        allConstraints              += heightImageConstraints
+        allConstraints              += widthImageConstraints
         NSLayoutConstraint.activate(allConstraints)
     }
 }
