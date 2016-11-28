@@ -50,7 +50,7 @@ class ArrowView: UIView {
     private func addConstraintForView(){
         NSLayoutConstraint.deactivate(allConstraints)
         allConstraints.removeAll()
-        let width = Int(UIScreen.main.bounds.width)/(delegate?.numbersArrows())!
+        let width = Int(bounds.width)/(delegate?.numbersArrows())!
         let views = ["arrowView":arrowView, "imgArrow":imgArrow]
         let spaceLeftConstraints   = NSLayoutConstraint.constraints(withVisualFormat: "H:|-\((delegate?.currentArrowIndex())!*width)-[arrowView(\(width))]", options: [], metrics: nil, views: views)
         let verticalConstraints   = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[arrowView]-0-|", options: [], metrics: nil, views: views)
