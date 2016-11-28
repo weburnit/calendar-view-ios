@@ -19,8 +19,17 @@ class CalendarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+    }
+    
+    func setupViews(){
         transparentNavigationBar()
-        addGradientLayer(view: topView, colors: [UIColorFromRGB(rgbValue: 0x9754C8).cgColor, UIColorFromRGB(rgbValue: 0x42B6B4).cgColor])
+        var frameGradientLayer          = topView.bounds
+        var frameCalendarView           = calendarView.bounds
+        frameGradientLayer.size.width   = UIScreen.main.bounds.width
+        frameCalendarView.size.width    = UIScreen.main.bounds.width
+        calendarView.frame              = frameCalendarView
+        addGradientLayer(view: topView, colors: [UIColorFromRGB(rgbValue: 0x9754C8).cgColor, UIColorFromRGB(rgbValue: 0x42B6B4).cgColor], frame: frameGradientLayer)
         lbCurrentDate.text = dateToStringWith(date: calendarView.manager.currentDate, dateFormatStr: "yyyy - MMM")
     }
     

@@ -17,9 +17,9 @@ func UIColorFromRGB(rgbValue: UInt, alpha: CGFloat = 1.0) -> UIColor {
     )
 }
 
-func addGradientLayer(view: UIView, colors: [CGColor]){
+func addGradientLayer(view: UIView, colors: [CGColor], frame: CGRect = CGRect.zero){
     let gradient: CAGradientLayer   = CAGradientLayer()
-    gradient.frame                  = view.bounds
+    gradient.frame                  = frame == CGRect.zero ? view.bounds : frame
     gradient.colors                 = colors
     gradient.startPoint             = CGPoint.init(x: 0, y: 0.5)
     gradient.endPoint               = CGPoint.init(x: 1, y: 0.5)
