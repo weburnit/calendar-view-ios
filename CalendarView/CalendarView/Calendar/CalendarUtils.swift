@@ -31,3 +31,8 @@ func dateToStringWith(date: Date, dateFormatStr: String) -> String{
     dateformatter.dateFormat    = dateFormatStr
     return dateformatter.string(from: date)
 }
+
+func getDayOfWeek(date: Date)->Int {
+    let calendar = NSCalendar.current
+    return calendar.component(.weekday, from: date)
+}

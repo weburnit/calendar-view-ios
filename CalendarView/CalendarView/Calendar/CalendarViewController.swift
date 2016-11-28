@@ -15,11 +15,17 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarMenu:    CVCalendarMenuView!
     @IBOutlet weak var calendarView:    CVCalendarView!
     @IBOutlet weak var lbCurrentDate:   UILabel!
-    var selectedDay:                    CVCalendarDayView?
+    @IBOutlet weak var arrowView:       ArrowView!
+    var selectedDay                     = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        arrowView.reload()
     }
     
     func setupViews(){
@@ -93,8 +99,10 @@ extension CalendarViewController: CVCalendarViewDelegate {
     }
     
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        selectedDay = dayView
-        lbCurrentDate.text = dateToStringWith(date: (selectedDay?.date.convertedDate())!, dateFormatStr: "yyyy - MMM")
+        selectedDay = dayView.date.convertedDate()!
+        lbCurrentDate.text = dateToStringWith(date: selectedDay, dateFormatStr: "yyyy - MMM")
+        arrowView.reload()
+        
     }
     
 }
@@ -121,4 +129,21 @@ extension CalendarViewController: CVCalendarViewAppearanceDelegate {
             default:                                        return nil
         }
     }
+}
+
+extension CalendarViewController: ArrowViewDelegate {
+    
+    func numbersArrows() -> Int {
+        return 7
+    }
+    
+    func currentArrowIndex() -> Int {
+        let weekDay = getDayOfWeek(date: selectedDay)
+        if weekDay == 1 {
+            return 6
+        }else{
+            return weekDay - 2
+        }
+    }
+    
 }

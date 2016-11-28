@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Calendar Appearance Delegate-->
+        <!--Arrow Delegate-->
         <scene sceneID="9H4-m9-sGg">
             <objects>
                 <viewController id="xKK-dF-F38" customClass="CalendarViewController" customModule="CalendarView" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,17 +140,28 @@
                                             <outlet property="calendarDelegate" destination="xKK-dF-F38" id="ZEd-sL-A3V"/>
                                         </connections>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYo-Wr-Bsm" customClass="ArrowView" customModule="CalendarView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="arrowDelegate" destination="xKK-dF-F38" id="NZu-hN-ont"/>
+                                        </connections>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.44705882349999998" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="xPq-YV-d4j" secondAttribute="trailing" id="1zq-Lz-YYd"/>
                                     <constraint firstAttribute="height" constant="148" id="6ww-ka-VSx"/>
+                                    <constraint firstItem="aYo-Wr-Bsm" firstAttribute="top" secondItem="xPq-YV-d4j" secondAttribute="bottom" id="Da5-yR-lO5"/>
+                                    <constraint firstItem="aYo-Wr-Bsm" firstAttribute="leading" secondItem="v75-P5-osb" secondAttribute="leading" id="Jrf-zI-4Iw"/>
                                     <constraint firstItem="xPq-YV-d4j" firstAttribute="top" secondItem="CeH-6A-RZZ" secondAttribute="bottom" id="KMr-4J-BpP"/>
                                     <constraint firstItem="CeH-6A-RZZ" firstAttribute="leading" secondItem="v75-P5-osb" secondAttribute="leading" id="UE6-yj-D1D"/>
                                     <constraint firstItem="drc-cE-vvv" firstAttribute="leading" secondItem="v75-P5-osb" secondAttribute="leading" id="XEs-UR-ijo"/>
                                     <constraint firstItem="xPq-YV-d4j" firstAttribute="leading" secondItem="v75-P5-osb" secondAttribute="leading" id="ZE8-yb-Dbb"/>
                                     <constraint firstItem="drc-cE-vvv" firstAttribute="top" secondItem="v75-P5-osb" secondAttribute="top" constant="20" id="e96-Uz-oia"/>
                                     <constraint firstAttribute="trailing" secondItem="CeH-6A-RZZ" secondAttribute="trailing" id="fZn-ZI-VGm"/>
+                                    <constraint firstAttribute="trailing" secondItem="aYo-Wr-Bsm" secondAttribute="trailing" id="kRl-Fi-tZl"/>
+                                    <constraint firstAttribute="bottom" secondItem="aYo-Wr-Bsm" secondAttribute="bottom" id="oAY-hl-oyE"/>
                                     <constraint firstAttribute="trailing" secondItem="drc-cE-vvv" secondAttribute="trailing" id="pXC-y8-0lh"/>
                                     <constraint firstItem="CeH-6A-RZZ" firstAttribute="top" secondItem="drc-cE-vvv" secondAttribute="bottom" id="t2B-1b-Sa5"/>
                                 </constraints>
@@ -165,6 +176,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="arrowView" destination="aYo-Wr-Bsm" id="KhO-9I-qIt"/>
                         <outlet property="calendarMenu" destination="CeH-6A-RZZ" id="gNs-s2-tUe"/>
                         <outlet property="calendarView" destination="xPq-YV-d4j" id="JZC-59-tIj"/>
                         <outlet property="lbCurrentDate" destination="pFq-uc-cR7" id="gG0-aP-pI8"/>
