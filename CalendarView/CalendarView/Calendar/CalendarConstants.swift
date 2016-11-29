@@ -24,6 +24,9 @@ struct CalendarConstants {
         static let present:UInt         = 0x0072BB
         static let left:UInt            = 0x9754C8
         static let right:UInt           = 0x42B6B4
+        static let center:UInt          = 0x6D85BE
+        static let time:UInt            = 0x59788E
+        static let name:UInt            = 0x81A9C5
     }
     
     struct Formats {

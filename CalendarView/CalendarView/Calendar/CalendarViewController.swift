@@ -16,8 +16,9 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendarView:    CVCalendarView!
     @IBOutlet weak var lbCurrentDate:   UILabel!
     @IBOutlet weak var arrowView:       ArrowView!
+    @IBOutlet weak var tbView:          UITableView!
     var selectedDay                     = Date()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -133,6 +134,51 @@ extension CalendarViewController: ArrowViewDelegate {
         }else{
             return weekDay - 2
         }
+    }
+    
+}
+
+extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell                    = tableView.dequeueReusableCell(withIdentifier: CalendarCell.CalendarCellIndentifier) as? CalendarCell
+        if cell == nil {
+            cell                    = CalendarCell(style: .default, reuseIdentifier: CalendarCell.CalendarCellIndentifier)
+        }
+        cell?.selectionStyle        = .none
+        cell?.lbTime.text           = "9:00 AM - 9:45 AM"
+        cell?.lbTitle.text          = "Fire Yoga"
+        cell?.lbPrice.text          = "$ 15"
+        cell?.lbName.text           = "Julia Johnson"
+        cell?.lbRecommended.text    = "100% recommended"
+        cell?.lbAddress.text        = "281 Smith Street"
+        cell?.avatarImgView.image   = nil
+        
+        switch indexPath.row % 3 {
+        case 0:
+            cell?.lbTitle.textColor = UIColorFromRGB(rgbValue: CalendarConstants.Colors.left)
+            cell?.avatarImgView.af_setImage(withURL: URL.init(string: "https://s-media-cache-ak0.pinimg.com/originals/35/21/95/3521959a702d7a5f778d5a421f9e0f02.jpg")!)
+            break
+        case 1:
+            cell?.lbTitle.textColor = UIColorFromRGB(rgbValue: CalendarConstants.Colors.center)
+            cell?.avatarImgView.af_setImage(withURL: URL.init(string: "http://mommyscene.com/images/awards/winter16/wicks-baby-butter-lifestyle-winter-gsm-awards-2016.jpg")!)
+            break
+        default:
+            cell?.lbTitle.textColor = UIColorFromRGB(rgbValue: CalendarConstants.Colors.right)
+            cell?.avatarImgView.af_setImage(withURL: URL.init(string: "http://knowledgeoverflow.com/wp-content/uploads/2012/06/babies-on-the-internet.jpg")!)
+            break
+            
+        }
+        
+        return cell!
     }
     
 }
