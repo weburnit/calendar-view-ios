@@ -1,12 +1,18 @@
 PODS:
+  - Alamofire (4.2.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - CVCalendar (1.4.0)
 
 DEPENDENCIES:
+  - AlamofireImage (~> 3.2)
   - CVCalendar (~> 1.4)
 
 SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   CVCalendar: ec1a06a508f99d8e5067258754f811a8a1433a3f
 
-PODFILE CHECKSUM: d73a3b1dd4935fe613a9f3de610e0ab79dc0f416
+PODFILE CHECKSUM: d0d2bb1b7137a35a5f87d80e065c80f3f4494400
 
 COCOAPODS: 1.2.0.beta.1
