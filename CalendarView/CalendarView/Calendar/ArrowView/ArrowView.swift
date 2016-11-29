@@ -62,7 +62,7 @@ class ArrowView: UIView {
         let spaceLeftConstraints    = NSLayoutConstraint.constraints(withVisualFormat: "H:|-\((delegate?.currentArrowIndex())!*width)-[arrowView(\(width))]", options: [], metrics: nil, views: views)
         let verticalConstraints     = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[arrowView]-0-|", options: [], metrics: nil, views: views)
         let heightImageConstraints  = NSLayoutConstraint.constraints(withVisualFormat: "V:[imgArrow(10)]-0-|", options: [], metrics: nil, views: views)
-        let widthImageConstraints   = NSLayoutConstraint.constraints(withVisualFormat: "H:|[imgArrow(20)]|", options: [], metrics: nil, views: views)
+        let widthImageConstraints   = NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[imgArrow]-0-|", options: [], metrics: nil, views: views)
         allConstraints              += spaceLeftConstraints
         allConstraints              += verticalConstraints
         allConstraints              += heightImageConstraints
