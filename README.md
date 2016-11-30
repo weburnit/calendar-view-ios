@@ -15,7 +15,7 @@ b. Dependencies:
 
 c. Installation:
 - Add below to podfile:
-  pod 'SLCalendarView', :git => 'https://github.com/weburnit/calendar-view-ios.git', :branch => 'dont-merge-master-cocoaPods-support-test'
+  + pod 'SLCalendarView', :git => 'https://github.com/weburnit/calendar-view-ios.git', :branch => 'dont-merge-master-cocoaPods-support-test'
 
 d. Integration:
 - Import SLCalendarView
