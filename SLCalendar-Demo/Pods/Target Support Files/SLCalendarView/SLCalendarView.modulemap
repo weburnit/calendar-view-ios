@@ -1,0 +1,6 @@
+framework module SLCalendarView {
+  umbrella header "SLCalendarView-umbrella.h"
+
+  export *
+  module * { export * }
+}

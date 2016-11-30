@@ -3,16 +3,29 @@ PODS:
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
   - CVCalendar (1.4.1)
+  - SLCalendarView (1.0.0-beta1):
+    - AlamofireImage (~> 3.2)
+    - CVCalendar (~> 1.4)
 
 DEPENDENCIES:
-  - AlamofireImage (~> 3.2)
-  - CVCalendar (~> 1.4)
+  - SLCalendarView (from `https://github.com/weburnit/calendar-view-ios.git`, branch `dont-merge-master-cocoaPods-support-test`)
+
+EXTERNAL SOURCES:
+  SLCalendarView:
+    :branch: dont-merge-master-cocoaPods-support-test
+    :git: https://github.com/weburnit/calendar-view-ios.git
+
+CHECKOUT OPTIONS:
+  SLCalendarView:
+    :commit: de30200dbd0530d21616625457be66212eed0653
+    :git: https://github.com/weburnit/calendar-view-ios.git
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   CVCalendar: 61912eb5dc39c3bcfe22a731147a559a696fbc15
+  SLCalendarView: 7008705cd586e50939233ac7e6b88bee91f8aed8
 
-PODFILE CHECKSUM: d0d2bb1b7137a35a5f87d80e065c80f3f4494400
+PODFILE CHECKSUM: 9f08d3c0239d32dfa5b560d0f328a4d6e4d068e5
 
 COCOAPODS: 1.2.0.beta.1

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +11,6 @@
         <!--Navigation Controller-->
         <scene sceneID="TBI-UI-oNv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iU4-bX-3Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="48N-l1-WI6" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Waa-Me-Bgn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -22,6 +20,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C6D-FN-RTL"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iU4-bX-3Cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1036" y="124"/>
         </scene>
@@ -61,21 +60,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="nie-qw-Qth"/>
                     <nil key="simulatedTopBarMetrics"/>
-                    <connections>
-                        <segue destination="zra-PQ-Etv" kind="show" identifier="ShowCalendarSegue" id="meu-TO-9Fh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-282.39999999999998" y="123.68815592203899"/>
-        </scene>
-        <!--Calendar-->
-        <scene sceneID="A88-gY-Jck">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Calendar" id="zra-PQ-Etv" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pZM-LI-vQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="553" y="124"/>
         </scene>
     </scenes>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SLCalendarView
 
 class ViewController: UIViewController {
 
@@ -15,7 +16,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showCalendarAction(_ sender: Any) {
-        performSegue(withIdentifier: "ShowCalendarSegue", sender: self)
+        SLCalendarView.performSegueToSLCalendarView(caller: self)
     }
 
 }
