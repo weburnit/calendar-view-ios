@@ -4,12 +4,20 @@ Calendar View on iOS
 
 For iOS:
 
-I. Requirements:
+1. Requirements:
 - iOS 9.0+
 - Xcode 8.0+
 - Swift 3.0+
 
-II. Dependencies:
+2. Dependencies:
 - pod 'CVCalendar', '~> 1.4'
 - pod 'AlamofireImage', '~> 3.2'
+
+3. Installation:
+- pod 'SLCalendarView', :git => 'https://github.com/weburnit/calendar-view-ios.git', :branch => 'dont-merge-master-cocoaPods-support-test'
+
+4. Intergration:
+- Import SLCalendarView
+- SLCalendarView.performSegueToSLCalendarView(caller: self)
+
  
