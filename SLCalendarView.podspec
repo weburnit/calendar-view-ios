@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
 Swift library for Calendar view
                        DESC
 
-s.homepage           = 'http://saloniz.com'
+s.homepage           = 'http://btechso.com'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Phi Nguyen' => 'fsdn.ios.developer@gmail.com' }
   s.source           = { :git => 'https://github.com/weburnit/calendar-view-ios.git', :tag => s.version.to_s }
