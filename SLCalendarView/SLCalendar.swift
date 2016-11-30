@@ -12,7 +12,7 @@ public class SLCalendarView{
     
     public static func performSegueToSLCalendarView(caller: UIViewController) {
         let podBundle   = Bundle(for: SLCalendarView.self)
-        let bundleURL   = podBundle.url(forResource: "Calendar", withExtension: "bundle")
+        let bundleURL   = podBundle.url(forResource: "SLCalendarView", withExtension: "bundle")
         let bundle      = Bundle(url: bundleURL!)!
         let storyboard  = UIStoryboard(name: "CalendarStoryboard", bundle: bundle)
         let vc          = storyboard.instantiateInitialViewController()!
