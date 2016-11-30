@@ -14,7 +14,7 @@ s.homepage           = 'http://saloniz.com'
   s.ios.deployment_target = '9.0'
   s.source_files = 'SLCalendarView/**/*.{swift}'
   s.resource_bundles = {
-    'SLCalendarView' => [SLCalendarView/**/*.{storyboard,xib,png}']
+    'SLCalendarView' => ['SLCalendarView/**/*.{storyboard,xib,png}']
   }
   s.requires_arc = true
   s.dependency 'CVCalendar', '~> 1.4'
