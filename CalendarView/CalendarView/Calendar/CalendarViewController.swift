@@ -89,7 +89,7 @@ extension CalendarViewController: CVCalendarViewDelegate {
     }
     
     func didSelectDayView(_ dayView: CVCalendarDayView, animationDidFinish: Bool) {
-        selectedDay = dayView.date.convertedDate()!
+        selectedDay = dayView.date.convertedDate(calendar: Calendar.current)!
         lbCurrentDate.text = dateToStringWith(date: selectedDay, dateFormatStr: CalendarConstants.Formats.date_top)
         arrowView.reload()
         
